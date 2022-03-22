@@ -4,11 +4,11 @@ import {
   Switch,
   Route,
   Link,
-  // useParams, //Praktikum B
+  useParams //Praktikum B
   // useRouteMatch //Praktikum C
-  Redirect,
-  useHistory,
-  useLocation // Praktikum D
+  // Redirect,
+  // useHistory,
+  // useLocation // Praktikum D
 } from "react-router-dom";
 
 // Situs ini memiliki 3 halaman, yang semuanya dirender secara dinamis di browser.
@@ -16,105 +16,105 @@ import {
 
 
 //Prak 1
-export default function BasicExample() {
-    return (
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-          </ul>
-          <hr />
+// export default function BasicExample() {
+//     return (
+//       <Router>
+//         <div>
+//           <ul>
+//             <li>
+//               <Link to="/">Home</Link>
+//             </li>
+//             <li>
+//               <Link to="/about">About</Link>
+//             </li>
+//             <li>
+//               <Link to="/dashboard">Dashboard</Link>
+//             </li>
+//           </ul>
+//           <hr />
   
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-              </Route> 
-            <Route path="/dashboard">
-              <Dashboard /> 
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+//           <Switch>
+//             <Route exact path="/">
+//               <Home />
+//             </Route>
+//             <Route path="/about">
+//               <About />
+//               </Route> 
+//             <Route path="/dashboard">
+//               <Dashboard /> 
+//             </Route>
+//           </Switch>
+//         </div>
+//       </Router>
+//     );
+//   }
   
-  // Anda dapat menganggap komponen ini sebagai "halaman (konten)" di situs Anda.
+//   // Anda dapat menganggap komponen ini sebagai "halaman (konten)" di situs Anda.
   
-  function Home() {
-    return (
-      <div>
-        <h2>Home</h2>
-      </div>
-    );
-  }
+//   function Home() {
+//     return (
+//       <div>
+//         <h2>Home</h2>
+//       </div>
+//     );
+//   }
   
-  function About() {
-    return (
-      <div>
-        <h2>About</h2>
-      </div>
-    );
-  }
+//   function About() {
+//     return (
+//       <div>
+//         <h2>About</h2>
+//       </div>
+//     );
+//   }
   
-  function Dashboard() {
-    return (
-      <div>
-        <h2>Dashboard</h2>
-      </div>
-    );
-  }
+//   function Dashboard() {
+//     return (
+//       <div>
+//         <h2>Dashboard</h2>
+//       </div>
+//     );
+//   }
 
 
 
 //Prak 2
-// export default function BasicExample() {
-//   return (
-//     <Router>
-//       <div>
-//         <h2>Accounts</h2>
-//         <ul>
-//           <li>
-//             <Link to="/netflix">Netflix</Link>
-//           </li>
-//           <li>
-//             <Link to="/gmail">Gmail</Link>
-//           </li>
-//           <li>
-//             <Link to="/yahoo">Yahoo</Link>
-//           </li>
-//           <li>
-//             <Link to="/amazon">Amazon</Link>
-//           </li>
-//         </ul>
+export default function BasicExample() {
+  return (
+    <Router>
+      <div>
+        <h2>Accounts</h2>
+        <ul>
+          <li>
+            <Link to="/netflix">Netflix</Link>
+          </li>
+          <li>
+            <Link to="/gmail">Gmail</Link>
+          </li>
+          <li>
+            <Link to="/yahoo">Yahoo</Link>
+          </li>
+          <li>
+            <Link to="/amazon">Amazon</Link>
+          </li>
+        </ul>
 
-//         <Switch>
-//           <Route path="/:id" children={<Child />} />
-//           </Switch>
-//         </div>
-//         </Router>
-//   );
-// }
+        <Switch>
+          <Route path="/:id" children={<Child />} />
+          </Switch>
+        </div>
+        </Router>
+  );
+}
 
-// function Child(){
-//   let {id} = useParams();
+function Child(){
+  let {id} = useParams();
 
-//   return(
-//     <div>
-//       <h3>ID : {id}</h3>
-//     </div>
-//   );
-// }
+  return(
+    <div>
+      <h3>ID : {id}</h3>
+    </div>
+  );
+}
 
 
 //Prak 3
